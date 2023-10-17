@@ -49,6 +49,20 @@ _putchar ('%');
 count++;
 break;
 }
+case 'd':
+{
+int d = va_arg (args, int);
+_putchar(d);
+count++;
+break;
+}
+case 'i':
+{
+int i = va_arg (args, int);
+_putchar(i);
+count++;
+break;
+}
 default:
 {
 _putchar ('%');
