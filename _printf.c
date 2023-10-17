@@ -1,14 +1,6 @@
+#include <stdio.h>
 #include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "main.h"
-/**
- * _printf - produces output according to a format.
- *
- * @format: character string.
- *
- * Return: count (character of strings)
- */
+
 int _printf(const char *format, ...)
 {
     va_list args;
@@ -27,7 +19,7 @@ int _printf(const char *format, ...)
                 case 'c':
                     {
                         int c = va_arg(args, int);
-                        _putchar(c);
+                        putchar(c);
                         count++;
                         break;
                     }
@@ -36,7 +28,7 @@ int _printf(const char *format, ...)
                         char *s = va_arg(args, char *);
                         while (*s != '\0')
                         {
-                            _putchar(*s);
+                            putchar(*s);
                             s++;
                             count++;
                         }
@@ -44,14 +36,14 @@ int _printf(const char *format, ...)
                     }
                 case '%':
                     {
-                        _putchar('%');
+                        putchar('%');
                         count++;
                         break;
                     }
                 default:
                     {
-                        _putchar('%');
-                        _putchar(*format);
+                        putchar('%');
+                        putchar(*format);
                         count += 2;
                         break;
                     }
@@ -59,7 +51,7 @@ int _printf(const char *format, ...)
         }
         else
         {
-            _putchar(*format);
+            putchar(*format);
             count++;
         }
 
