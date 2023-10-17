@@ -4,16 +4,16 @@
 /**
 * _putchar - This function prints a character using the putchar function.
 *
-* @c : character parameter
+* @x : character parameter
 * Return: 1 (success)
 *        -1 (failure)
 */  
-int _putchar (char x) 
+int _putchar(char x)
 {
-return (write (1, &x, 1));
+return (write(1, &x, 1));
 }
 
-int _printf (const char *format, ...) 
+int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
@@ -27,14 +27,14 @@ switch (*format)
 {
 case 'c':
 {
-int c = va_arg (args, int);
+int c = va_arg(args, int);
 _putchar(c);
 count++;
 break;
 }
 case 's':
 {
-char *s = va_arg (args, char *);
+char *s = va_arg(args, char *);
 while (*s != '\0')
 {
 _putchar(*s);
@@ -65,6 +65,6 @@ count++;
 }
 format++;
 }
-va_end (args);
-return count;
+va_end(args);
+return (count);
 }
